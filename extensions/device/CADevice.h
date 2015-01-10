@@ -71,6 +71,10 @@ namespace CADevice
     
     void writeToSavedPhotosAlbum(const std::string &s);
     
+    void phoneCall( const char*  phone_number);
+    void email( const char*  email);
+    void phoneSMS(const char*  phoneNumber);
+     void showWebBrowser(const char*  url);
     std::vector<CAAddressBookRecord> getAddressBook();
 };
 #endif /* defined(__PublishPhoto__CADevice__) */

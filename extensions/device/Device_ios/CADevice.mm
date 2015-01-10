@@ -70,4 +70,43 @@ void setScreenBrightness(float brightness)
     [[CABrightness_iOS alloc] setBrightnessPercent:brightnessPer];
 }
     
+    
+void phoneCall(const char*  phone_number)
+    {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        NSString *astring = [[NSString alloc] initWithString:[NSString stringWithFormat:@"tel://%s",phone_number]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:astring]];
+        [astring release];
+#endif
+    }
+    
+    void email( const char*  email)
+    {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        NSString *astring = [[NSString alloc] initWithString:[NSString stringWithFormat:@"mailto://%s",email]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:astring]];
+        [astring release];
+#endif
+        
+    }
+    void phoneSMS(const char*  phone_number)
+    {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        NSString *astring = [[NSString alloc] initWithString:[NSString stringWithFormat:@"sms://%s",phone_number]];
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:astring]];
+        [astring release];
+#endif
+    }
+    void showWebBrowser(const char*  url)
+    {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        NSString *astring = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%s",url]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:astring]];
+        [astring release];
+#endif
+    }
+
+    
+    
+    
 }
